@@ -1,0 +1,22 @@
+$theme-colors: (
+  "primary": #5a287d,
+  "danger": #ff4136
+);
+
+.err{
+  color: #ff4136;
+}
+.form-control, .form-select, .form-check-input {
+  border-color: #5a287d !important;
+}
+
+
+.form-check-input:checked{
+  background-color: #5a287d !important;
+  border-color: #5a287d !important;
+}
+
+/* The following line can be included in a src/App.scss */
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+// #c7a8ff
+
