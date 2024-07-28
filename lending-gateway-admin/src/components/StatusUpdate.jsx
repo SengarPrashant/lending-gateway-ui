@@ -40,7 +40,7 @@ function StatusUpdateModal({ open = false, onClose = () => { }, data = {} }) {
                             <option selected={formdata?.status == 'SUBMITTED'} value="SUBMITTED">SUBMITTED</option>
                             <option selected={formdata?.status == 'IN-REVIEW'} value="IN-REVIEW">IN-REVIEW</option>
                             <option selected={formdata?.status == 'APPROVED'} value="APPROVED">APPROVED</option>
-                            <option selected={formdata?.status == 'PARTIAL-APPROVED'} value="PARTIAL-APPROVED3">PARTIAL-APPROVED</option>
+                            <option selected={formdata?.status == 'PARTIAL-APPROVED'} value="PARTIAL-APPROVED">PARTIAL-APPROVED</option>
                             <option selected={formdata?.status == 'REJECTED'} value="REJECTED">REJECTED</option>
                             <option selected={formdata?.status == 'DISBURSED'} value="DISBURSED">DISBURSED</option>
                         </Form.Select>
