@@ -29,7 +29,7 @@ function StatusUpdateModal({ open = false, onClose = () => { }, data = {} }) {
     };
     return (
         <>
-            <Modal show={open} centered onHide={()=>onClose(false)} backdrop="static" autoFocus>
+            <Modal role="dialog" aria-modal="true" show={open} centered onHide={()=>onClose(false)} backdrop="static" autoFocus>
                 <Modal.Header closeButton>
                     <Modal.Title>Update appliaction status</Modal.Title>
                 </Modal.Header>

@@ -13,7 +13,7 @@ function ApplicationHeader() {
         <Navbar expand='lg' bg="primary" sticky='top' data-bs-theme="dark">
             <Container>
                 <Navbar.Brand href="#home">
-                    <Image src="logo.png" height={50} rounded />
+                    <Image src="logo.png" alt='Natwest logo' height={50} rounded />
                     Natwest <small>(Loan central)</small>
                 </Navbar.Brand>
                 <Navbar.Toggle />
