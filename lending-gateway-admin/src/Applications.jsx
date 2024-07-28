@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Badge, Button, Container, Form } from "react-bootstrap";
+import { Button, Container, Form } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Stack from "react-bootstrap/Stack";
 import Row from "react-bootstrap/Row";
@@ -194,7 +194,7 @@ function Applications() {
                       </div>
                     </Col>
                   </Row>
-                  <div style={{ textAlign: "right" }}>
+                  <div className="pullRight">
                     <Button
                       variant="outline-primary"
                       aria-label="View documents"

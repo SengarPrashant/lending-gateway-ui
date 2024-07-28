@@ -37,6 +37,9 @@ $theme-colors: (
 .REJECTED{
   background: #eb3911;
 }
+.DISBURSED{
+  background: #10a14c;
+}
 .status{
   color: #fff;
   padding: 4px;
@@ -45,6 +48,13 @@ $theme-colors: (
   font-size: 12px;
   font-weight:bold;
 }
+.pullRight{
+  text-align: right;
+}
+.center{
+  text-align: center;
+}
+
 /* The following line can be included in a src/App.scss */
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 // #c7a8ff

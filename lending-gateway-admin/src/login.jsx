@@ -16,7 +16,7 @@ function Login() {
     const onChange = (e) => {
         setData({ ...data, [e.target.name]: e.target.value });
         if (e.target.value) {
-            setError({ ...error, [e.target.name]: '' })
+            setError({ ...error, global: '', [e.target.name]: '' })
         }
     }
 
@@ -49,13 +49,13 @@ function Login() {
         <div style={{ height: 'calc(100vh - 0px)', backgroundColor: '#e3d4ff' }}>
             <Stack gap={2} className="col-md-5 mx-auto" style={{ height: 'calc(100vh - 0px)' }}>
                 <Card style={{ width: '22rem', padding: '1em', margin: 'auto', textAlign: 'center' }}>
-                    <Card.Body>
+                    <Card.Body style={{ paddingBottom: 0 }}>
                         <Card.Title>
                             <Image src="logo.png" alt='Natwest logo' height={50} rounded />
                             Natwest
                         </Card.Title>
                     </Card.Body>
-                    <Card.Body style={{ textAlign: 'left' }}>
+                    <Card.Body style={{ textAlign: 'left', paddingTop:0 }}>
                         <Row>
                             <Col sm={12}>
                                 <Form.Label htmlFor="txtUserName">Username</Form.Label>
@@ -83,7 +83,7 @@ function Login() {
                                     {error.password}
                                 </FormLabel>
                             </Col>
-                            <Col sm={12} style={{ paddingTop: 16 }}>
+                            <Col sm={12} style={{ paddingTop: 8 }}>
                                 <Form.Check type="checkbox"
                                     id={`rememberMe`} label={`Remember me`} />
                             </Col>
@@ -96,7 +96,9 @@ function Login() {
                                     {error.global}
                                 </FormLabel>
                             </Col>
-
+                            <div className='center'>
+                                <a href='#'>Request access</a>
+                            </div>
                         </Row>
                     </Card.Body>
                 </Card>
