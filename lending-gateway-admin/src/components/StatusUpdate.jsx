@@ -48,7 +48,7 @@ function StatusUpdateModal({ open = false, onClose = () => {}, data = {} }) {
         autoFocus
       >
         <Modal.Header closeButton>
-          <Modal.Title>Update appliaction status</Modal.Title>
+          <Modal.Title>Update application status</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Col sm={12} style={{ paddingTop: 0 }}>
