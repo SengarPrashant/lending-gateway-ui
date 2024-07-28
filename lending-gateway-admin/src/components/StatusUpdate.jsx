@@ -16,15 +16,16 @@ function StatusUpdateModal({ open = false, onClose = () => { }, data = {} }) {
         setFormData({ ...formdata, [e.target.name]: e.target.value })
     }
     const handleSubmit = (event) => {
-        //setLoading(true);
+        setLoading(true);
         const req = { ...formdata, arn: data.arn }
-        onClose(true)
-        // axios.put('https://bankadminapi.bsite.net/api/v1/LoanAdmin/applications', req).then(res => {
-        //     setLoading(false);
-        //     setFormData({})
-        // }).catch(err => {
-        //     setLoading(false);
-        // })
+       
+        axios.put('https://bankofadminapi4.bsite.net/api/v1/LoanAdmin/applications', req).then(res => {
+            setLoading(false);
+            setFormData({});
+            onClose(true);
+        }).catch(err => {
+            setLoading(false);
+        })
     };
     return (
         <>

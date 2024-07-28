@@ -14,7 +14,7 @@ function ApplicationHeader() {
             <Container>
                 <Navbar.Brand href="#home">
                     <Image src="logo.png" height={50} rounded />
-                    Natwest
+                    Natwest <small>(Loan central)</small>
                 </Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
@@ -22,8 +22,8 @@ function ApplicationHeader() {
                         {username}
                        
                     </Navbar.Text>
-                    <Button variant="outline-secondary" aria-label="Logout" onClick={onClick} size='sm'>
-                            <svg width="24px" height="24px" viewBox="0 -0.5 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <Button variant="outline-secondary" className='focuslight' aria-label="Logout" onClick={onClick} size='sm'>
+                            <svg width="24px" height="24px" viewBox="0 -0.5 21 21" version="1.1" >
                                 <title>shut_down [#1431]</title>
                                 <desc>Created with Sketch.</desc>
                                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

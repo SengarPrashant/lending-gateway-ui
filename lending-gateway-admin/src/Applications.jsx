@@ -23,9 +23,10 @@ function Applications() {
     const loadData=()=>{
         setLoading(true);
          // https://bankadminapi.bsite.net/api/v1/LoanAdmin/applications
-         axios.get('https://bankapi4.bsite.net/api/v1/Loan/history').then(res => {
-            setApiData([...res.data?.data?.loanApplications]);
-            setData([...res.data?.data?.loanApplications]);
+         axios.get('https://bankofadminapi4.bsite.net/api/v1/LoanAdmin/applications').then(res => {
+            console.log([...res.data?.data])
+            setApiData([...res.data?.data]);
+            setData([...res.data?.data]);
             setLoading(false);
         }).catch((err) => {
             setLoading(false);
@@ -56,25 +57,10 @@ function Applications() {
                     <Stack direction="horizontal" gap={3}>
                         <div className="p-2"><h3>Manage Loan Applications</h3></div>
                         <div className="p-2 ms-auto">
-                            <Form.Control type="text" name='filter' id="txtfilter"
-                                aria-label='Filter text (Name/Email/Mobile/ARN)' placeholder=""
+                            <Form.Control type="text" name='filter' id="txtfilter" 
+                                aria-label='Filter text (Name/Email/Mobile/ARN)' placeholder="Search..."
                                 onChange={onSearch}
                             />
-                        </div>
-                        <div className="p-2">
-                            <Button>
-                                <svg width="22px" height="22px" viewBox="0 0 24 24" >
-                                    <title>Search</title>
-                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <g id="Search">
-                                            <rect id="Rectangle" fill-rule="nonzero" x="0" y="0" width="24" height="24"></rect>
-                                            <circle id="Oval" stroke="#fff" stroke-width="2" stroke-linecap="round" cx="11" cy="11" r="7"></circle>
-                                            <line x1="16" y1="17" x2="19" y2="20" id="Path" stroke="#fff" stroke-width="2" stroke-linecap="round"></line>
-                                        </g>
-                                    </g>
-                                </svg>
-                                {' '} Search
-                            </Button>
                         </div>
                     </Stack>
                     {data.map((item, i) => <Card key={item.arn} style={{ boxShadow: '0 4px 8px rgba(0,0,0,0.2)', borderRadius: 5, marginBottom: 16 }}>
