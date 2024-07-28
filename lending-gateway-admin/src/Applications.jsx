@@ -75,24 +75,25 @@ function Applications() {
                                                 </path>
                                             </g>
                                         </g>
-                                    </svg><small>{item.mobile}</small></div>
+                                    </svg><small>
+                                            <a href={`tel:${item.mobile}`}>{item.mobile}</a></small></div>
                                     <div><svg fill="#ff4136" style={{ marginRight: 8 }} width="16px" height="16px" viewBox="0 0 96 96" ><path d="M90,12H6a5.9966,5.9966,0,0,0-6,6V78a5.9966,5.9966,0,0,0,6,6H90a5.9966,5.9966,0,0,0,6-6V18A5.9966,5.9966,0,0,0,90,12ZM84,24v2.5188L48,47.0918,12,26.5188V24ZM12,72V40.3381L45.0234,59.209a5.9961,5.9961,0,0,0,5.9532,0L84,40.3381V72Z" /></svg>
-                                        <small>{item.email}</small></div>
-
+                                        <small>
+                                            <a href={`tel:${item.email}`}>{item.email}</a></small>
+                                    </div>
                                 </Col>
                                 <Col sm={12} lg={4}>
                                     <strong>{item.arn}</strong>
                                     <div>Loan Type: <small>{item.productCode}</small></div>
-                                    <div>Loan Amount: <small>₹{item.amount.toLocaleString()}</small></div>
-                                    <div>Tenure:<small>{item.tenureMonths} Months</small></div>
-                                    <div>Interest Rate:
-                                        <small>{item.interestRate.toFixed(2)}%</small></div>
+                                    <div>Loan Amount: <small>₹{item.amount.toLocaleString('en-IN')}</small></div>
+                                    <div>Tenure: <small>{item.tenureMonths} Months</small></div>
+                                    <div>Interest Rate: <small>{item.interestRate.toFixed(2)}%</small></div>
                                 </Col>
                                 <Col sm={12} lg={4}>
-                                    <div>EMI: <small>₹{item.emi.toFixed(2).toLocaleString()}</small></div>
+                                    <div>EMI: <small>₹{Number(item.emi.toFixed(2)).toLocaleString('en-IN')}</small></div>
                                     <div>Occupation: <small>{item.occupation}</small></div>
-                                    <div>Annual Income:<small>₹{item.annualIncome.toLocaleString()}</small></div>
-                                    <div>Status: <span className={`status ${item.status?.replace('-','')}`}>{item.status}</span></div>
+                                    <div>Annual Income: <small>₹{item.annualIncome.toLocaleString('en-IN')}</small></div>
+                                    <div>Status: <span className={`status ${item.status?.replace('-', '')}`}>{item.status}</span></div>
                                 </Col>
                             </Row>
                             <div style={{ textAlign: 'right' }}>
