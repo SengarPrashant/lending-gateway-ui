@@ -51,7 +51,7 @@ function Login() {
                 <Card style={{ width: '22rem', padding: '1em', margin: 'auto', textAlign: 'center' }}>
                     <Card.Body>
                         <Card.Title>
-                            <Image src="logo.png" height={50} rounded />
+                            <Image src="logo.png" alt='Natwest logo' height={50} rounded />
                             Natwest
                         </Card.Title>
                     </Card.Body>
