@@ -23,22 +23,22 @@ $theme-colors: (
  // SUBMITTED :"yel"
     // || IN-REVIEW || APPROVED || PARTIAL-APPROVED || REJECTED
 .SUBMITTED{
-  background: #5848d1;
+  background: #6b6a74;
 }
 .INREVIEW{
-  background: #e4e14d;
+  background: #0a36e9;
 }
 .APPROVED{
-  background: #4de48c;
+  background: #10a14c;
 }
 .PARTIALAPPROVED{
-  background: #e49e4d;
+  background: #d1770f;
 }
 .REJECTED{
   background: #eb3911;
-  color: #fff;
 }
 .status{
+  color: #fff;
   padding: 4px;
   border-radius: 3px;
   text-transform: capitalize; 
