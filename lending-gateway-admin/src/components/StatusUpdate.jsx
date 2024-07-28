@@ -18,8 +18,8 @@ function StatusUpdateModal({ open = false, onClose = () => { }, data = {} }) {
     const handleSubmit = (event) => {
         setLoading(true);
         const req = { ...formdata, arn: data.arn }
-       
-        axios.put('https://bankofadminapi4.bsite.net/api/v1/LoanAdmin/applications', req).then(res => {
+       console.log(req)
+        axios.put('https://bankofadminapi5.bsite.net/api/v1/LoanAdmin/applications', req).then(res => {
             setLoading(false);
             setFormData({});
             onClose(true);
@@ -31,12 +31,12 @@ function StatusUpdateModal({ open = false, onClose = () => { }, data = {} }) {
         <>
             <Modal show={open} centered onHide={()=>onClose(false)} backdrop="static" autoFocus>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>Update appliaction status</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Col sm={12} style={{ paddingTop: 0 }}>
                         <Form.Label htmlFor="txtStatus">Status</Form.Label>
-                        <Form.Select required onChange={onChange} id="txtStatus" aria-label="Select status">
+                        <Form.Select required name='status' onChange={onChange} id="txtStatus" aria-label="Select status">
                             <option selected={formdata?.status == 'SUBMITTED'} value="SUBMITTED">SUBMITTED</option>
                             <option selected={formdata?.status == 'IN-REVIEW'} value="IN-REVIEW">IN-REVIEW</option>
                             <option selected={formdata?.status == 'APPROVED'} value="APPROVED">APPROVED</option>

@@ -3,6 +3,12 @@ export const users = [
     { racf: 'kumamfs', pwd: 'admin', name: "Manish" }
 ]
 
+
+export const status={
+    // SUBMITTED :"yel"
+    // || IN-REVIEW || APPROVED || PARTIALAPPROVED || REJECTED
+}
+
 export const downloadFiles = (files = []) => {
     files.forEach(fileData => {
         const [filename, mimeType, base64String] = fileData.split('|');

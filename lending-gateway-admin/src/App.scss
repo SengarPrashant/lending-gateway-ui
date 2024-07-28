@@ -20,7 +20,30 @@ $theme-colors: (
 .focuslight:hover{
   border: 1px solid white;
 }
-
+ // SUBMITTED :"yel"
+    // || IN-REVIEW || APPROVED || PARTIAL-APPROVED || REJECTED
+.SUBMITTED{
+  background: #5848d1;
+}
+.INREVIEW{
+  background: #e4e14d;
+}
+.APPROVED{
+  background: #4de48c;
+}
+.PARTIALAPPROVED{
+  background: #e49e4d;
+}
+.REJECTED{
+  background: #eb3911;
+}
+.status{
+  padding: 4px;
+  border-radius: 3px;
+  text-transform: capitalize; 
+  font-size: 12px;
+  font-weight:bold;
+}
 /* The following line can be included in a src/App.scss */
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 // #c7a8ff

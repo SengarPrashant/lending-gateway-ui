@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Button, Container, Form } from "react-bootstrap";
+import { Badge, Button, Container, Form } from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
 import Stack from 'react-bootstrap/Stack';
 import Row from 'react-bootstrap/Row';
@@ -20,11 +20,9 @@ function Applications() {
         loadData();
     }, [])
 
-    const loadData=()=>{
+    const loadData = () => {
         setLoading(true);
-         // https://bankadminapi.bsite.net/api/v1/LoanAdmin/applications
-         axios.get('https://bankofadminapi4.bsite.net/api/v1/LoanAdmin/applications').then(res => {
-            console.log([...res.data?.data])
+        axios.get('https://bankofadminapi4.bsite.net/api/v1/LoanAdmin/applications').then(res => {
             setApiData([...res.data?.data]);
             setData([...res.data?.data]);
             setLoading(false);
@@ -33,7 +31,7 @@ function Applications() {
         })
     }
 
-    const onModalclose = (reload=false) => {
+    const onModalclose = (reload = false) => {
         reload && loadData();
         setCurrent(null);
     }
@@ -57,7 +55,7 @@ function Applications() {
                     <Stack direction="horizontal" gap={3}>
                         <div className="p-2"><h3>Manage Loan Applications</h3></div>
                         <div className="p-2 ms-auto">
-                            <Form.Control type="text" name='filter' id="txtfilter" 
+                            <Form.Control type="text" name='filter' id="txtfilter"
                                 aria-label='Filter text (Name/Email/Mobile/ARN)' placeholder="Search..."
                                 onChange={onSearch}
                             />
@@ -84,7 +82,7 @@ function Applications() {
                                 </Col>
                                 <Col sm={12} lg={4}>
                                     <strong>{item.arn}</strong>
-                                    <div>Loan type: <small>{item.productCode}</small></div>
+                                    <div>Loan Type: <small>{item.productCode}</small></div>
                                     <div>Loan Amount: <small>₹{item.amount.toLocaleString()}</small></div>
                                     <div>Tenure:<small>{item.tenureMonths} Months</small></div>
                                     <div>Interest Rate:
@@ -94,20 +92,19 @@ function Applications() {
                                     <div>EMI: <small>₹{item.emi.toFixed(2).toLocaleString()}</small></div>
                                     <div>Occupation: <small>{item.occupation}</small></div>
                                     <div>Annual Income:<small>₹{item.annualIncome.toLocaleString()}</small></div>
-                                    <div>Interest Rate:
-                                        <small>7.02%</small></div>
-                                    <div style={{ textAlign: 'right' }}>
-                                        <Button variant="outline-primary" onClick={() => downloadFiles(item.documentsBase64)} size="sm" style={{ marginRight: 16 }}>
-                                            <svg width="16px" height="16px" style={{ marginRight: 4 }} viewBox="0 0 24 24" fill="none">
-                                                <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M13 3V10H20M6 7H5C4.44772 7 4 7.44772 4 8V20C4 20.5523 4.44772 21 5 21H14C14.5523 21 15 20.5523 15 20V19M8 4V16C8 16.5523 8.44772 17 9 17H19C19.5523 17 20 16.5523 20 16V9.38898C20 9.13879 19.9062 8.89769 19.7372 8.71326L14.7973 3.32428C14.6078 3.11765 14.3404 3 14.0601 3H9C8.44772 3 8 3.44772 8 4Z" />
-                                            </svg>
-                                            View documents</Button>
-                                        <Button variant="outline-primary" onClick={() => onUpdate(item)} size="sm">
-                                            <svg fill="currentColor" style={{ marginRight: 4 }} width="16px" height="16px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.71,4.72,19.28,2.29a1,1,0,0,0-1.41,0L12.29,7.87a1,1,0,0,0-.29.71V11a1,1,0,0,0,1,1h2.42a1,1,0,0,0,.71-.29l5.58-5.58A1,1,0,0,0,21.71,4.72ZM15,10H14V9l4.58-4.58,1,1Zm4,2h0a1,1,0,0,0-1,1,7,7,0,0,1-7,7H5.41l.64-.63a1,1,0,0,0,0-1.42A7,7,0,0,1,11,6a1,1,0,0,0,0-2h0A9,9,0,0,0,4,18.62L2.29,20.29a1,1,0,0,0-.21,1.09A1,1,0,0,0,3,22h8a9,9,0,0,0,9-9A1,1,0,0,0,19,12Z" /></svg>
-                                            Update</Button>
-                                    </div>
+                                    <div>Status: <span className={`status ${item.status?.replace('-','')}`}>{item.status}</span></div>
                                 </Col>
                             </Row>
+                            <div style={{ textAlign: 'right' }}>
+                                <Button variant="outline-primary" onClick={() => downloadFiles(item.documentsBase64)} size="sm" style={{ marginRight: 16 }}>
+                                    <svg width="16px" height="16px" style={{ marginRight: 4 }} viewBox="0 0 24 24" fill="none">
+                                        <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M13 3V10H20M6 7H5C4.44772 7 4 7.44772 4 8V20C4 20.5523 4.44772 21 5 21H14C14.5523 21 15 20.5523 15 20V19M8 4V16C8 16.5523 8.44772 17 9 17H19C19.5523 17 20 16.5523 20 16V9.38898C20 9.13879 19.9062 8.89769 19.7372 8.71326L14.7973 3.32428C14.6078 3.11765 14.3404 3 14.0601 3H9C8.44772 3 8 3.44772 8 4Z" />
+                                    </svg>
+                                    View documents</Button>
+                                <Button variant="outline-primary" onClick={() => onUpdate(item)} size="sm">
+                                    <svg fill="currentColor" style={{ marginRight: 4 }} width="16px" height="16px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.71,4.72,19.28,2.29a1,1,0,0,0-1.41,0L12.29,7.87a1,1,0,0,0-.29.71V11a1,1,0,0,0,1,1h2.42a1,1,0,0,0,.71-.29l5.58-5.58A1,1,0,0,0,21.71,4.72ZM15,10H14V9l4.58-4.58,1,1Zm4,2h0a1,1,0,0,0-1,1,7,7,0,0,1-7,7H5.41l.64-.63a1,1,0,0,0,0-1.42A7,7,0,0,1,11,6a1,1,0,0,0,0-2h0A9,9,0,0,0,4,18.62L2.29,20.29a1,1,0,0,0-.21,1.09A1,1,0,0,0,3,22h8a9,9,0,0,0,9-9A1,1,0,0,0,19,12Z" /></svg>
+                                    Update</Button>
+                            </div>
                         </Card.Body>
                     </Card>)}
                 </>}
