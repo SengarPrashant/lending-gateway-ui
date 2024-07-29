@@ -28,8 +28,8 @@ function Applications() {
         axios
             .get(loanAdminApplicationsUrl)
             .then((res) => {
-                setApiData([...res.data?.data]);
-                setData([...res.data?.data]);
+                setApiData([...res.data?.data].reverse());
+                setData([...res.data?.data].reverse());
                 setLoading(false);
             })
             .catch((err) => {
