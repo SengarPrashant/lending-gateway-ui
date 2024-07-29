@@ -55,6 +55,16 @@ $theme-colors: (
   text-align: center;
 }
 
+.remarks{
+  padding: 8px;
+    background: #70707017;
+    border-radius: 5px;
+    min-width: 66%;
+    text-align: left;
+    margin-top: 8px;
+    max-width: 66%;
+}
+
 /* The following line can be included in a src/App.scss */
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 // #c7a8ff

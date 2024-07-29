@@ -1,6 +1,9 @@
 export const users = [
     { racf: 'sengpst', pwd: 'admin', name: "Prashant" },
-    { racf: 'kumamfs', pwd: 'admin', name: "Manish" }
+    { racf: 'kumamfs', pwd: 'admin', name: "Manish" },
+    { racf: 'aggaalh', pwd: 'admin', name: "Lavish" },
+    { racf: 'sahadb', pwd: 'admin', name: "Dibendu" },
+    { racf: 'rsbct', pwd: 'admin', name: "Sahadevan" }
 ]
 
 
