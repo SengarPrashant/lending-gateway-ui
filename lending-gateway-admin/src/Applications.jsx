@@ -171,9 +171,8 @@ function Applications() {
                                             <div>
                                                 Status:{" "}
                                                 <span
-                                                    className={`status ${item.status?.replace("-", "")}`}
-                                                >
-                                                    {item.status}
+                                                    className={`status ${item.status ? item.status.replace("-", "") : 'SUBMITTED'}`}>
+                                                    {item.status || "SUBMITTED"}
                                                 </span>
                                             </div>
                                         </Col>
