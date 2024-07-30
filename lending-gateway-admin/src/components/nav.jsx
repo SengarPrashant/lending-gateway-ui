@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
+import { Logo } from './Logo';
 
 function ApplicationHeader() {
     const username = localStorage.getItem('name');
@@ -13,8 +13,8 @@ function ApplicationHeader() {
         <Navbar expand='lg' bg="primary" sticky='top' data-bs-theme="dark">
             <Container>
                 <Navbar.Brand href="#home">
-                    <Image src="logo.png" alt='Natwest logo' height={50} rounded />
-                    Natwest <small>(Loan central)</small>
+                    <Logo dark={false} w={50} h={50} />
+                    <small>{' Loan central'}</small>
                 </Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">

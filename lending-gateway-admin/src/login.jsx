@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
-import Image from 'react-bootstrap/Image';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
 import { Button, FormLabel } from 'react-bootstrap';
 import { users } from './common/utils';
+import { Logo } from './components/Logo';
 
 function Login() {
     const [data, setData] = useState({ username: '', password: '' });
@@ -51,8 +50,8 @@ function Login() {
                 <Card style={{ width: '22rem', padding: '1em', margin: 'auto', textAlign: 'center' }}>
                     <Card.Body style={{ paddingBottom: 0 }}>
                         <Card.Title>
-                            <Image src="logo.png" alt='Natwest logo' height={50} rounded />
-                            Natwest
+                            <div><Logo /></div>
+                            Loan central
                         </Card.Title>
                     </Card.Body>
                     <Card.Body style={{ textAlign: 'left', paddingTop:0 }}>
